@@ -67,10 +67,14 @@
     "@nestjs/microservices": "^10.3.0 || ^11.0.0",
     "@nestjs/swagger": "^10.3.0 || ^11.0.0",
     "@nestjs/terminus": "^10.3.0 || ^11.0.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "typeorm": "^0.3.0"
   },
   "peerDependenciesMeta": {
     "@nestjs/microservices": {
+      "optional": true
+    },
+    "typeorm": {
       "optional": true
     }
   },
@@ -83,6 +87,7 @@
     "@nestjs/swagger": "catalog:",
     "@nestjs/terminus": "catalog:",
     "@nestjs/testing": "catalog:",
+    "typeorm": "catalog:",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",

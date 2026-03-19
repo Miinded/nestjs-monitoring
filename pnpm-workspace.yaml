@@ -27,6 +27,7 @@ catalog:
   rxjs: ^7.8.2
   turbo: ^2.8.9
   ts-node: ^10.9.2
+  typeorm: ^0.3.25
   typescript: ^5.9.3
 
 ignoredBuiltDependencies:
