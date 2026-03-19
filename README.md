@@ -29,8 +29,8 @@ A collection of production-ready NestJS monitoring modules with Prometheus and h
 
 ## Packages
 
-| Package | Description |
-| ------- | ----------- |
+| Package                                                      | Description                                                             |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | [`@miinded/nestjs-prometheus`](./packages/nestjs-prometheus) | Prometheus metrics exposure and health checks with Terminus integration |
 
 ## Installation
@@ -78,6 +78,7 @@ export class AppModule {}
 ```
 
 This automatically registers:
+
 - `GET /metrics` — Prometheus metrics endpoint
 
 ### Built-in health indicators
@@ -92,14 +93,14 @@ import {
 } from '@miinded/nestjs-prometheus';
 ```
 
-| Indicator | Description |
-| --------- | ----------- |
-| `AppHealthIndicator` | HTTP ping check against a configured URL |
-| `DatabaseHealthIndicator` | TypeORM database connectivity check |
-| `RedisHealthIndicator` | Redis connectivity via microservice transport |
-| `RmqHealthIndicator` | RabbitMQ connectivity via microservice transport |
-| `TypeormQueryHealthIndicator` | Custom TypeORM query health check |
-| `CustomHttpHealthIndicator` | Configurable HTTP endpoint health check |
+| Indicator                     | Description                                      |
+| ----------------------------- | ------------------------------------------------ |
+| `AppHealthIndicator`          | HTTP ping check against a configured URL         |
+| `DatabaseHealthIndicator`     | TypeORM database connectivity check              |
+| `RedisHealthIndicator`        | Redis connectivity via microservice transport    |
+| `RmqHealthIndicator`          | RabbitMQ connectivity via microservice transport |
+| `TypeormQueryHealthIndicator` | Custom TypeORM query health check                |
+| `CustomHttpHealthIndicator`   | Configurable HTTP endpoint health check          |
 
 ### Custom health indicator
 
@@ -140,32 +141,32 @@ export class AppService {
 
 ### `PrometheusModule.registerAsync(options)`
 
-| Option | Type | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| `useFactory` | `(...args) => PrometheusConfig` | ❌ | Factory returning Prometheus config |
-| `inject` | `any[]` | ❌ | Dependencies to inject into factory |
-| `imports` | `Module[]` | ❌ | Modules to import |
+| Option       | Type                            | Required | Description                         |
+| ------------ | ------------------------------- | -------- | ----------------------------------- |
+| `useFactory` | `(...args) => PrometheusConfig` | ❌       | Factory returning Prometheus config |
+| `inject`     | `any[]`                         | ❌       | Dependencies to inject into factory |
+| `imports`    | `Module[]`                      | ❌       | Modules to import                   |
 
 ### `PrometheusConfig`
 
-| Option | Type | Description |
-| ------ | ---- | ----------- |
+| Option | Type     | Description                           |
+| ------ | -------- | ------------------------------------- |
 | `name` | `string` | Application name used as metric label |
 
 ### Exports
 
-| Symbol | Description |
-| ------ | ----------- |
-| `PrometheusModule` | Main module |
-| `PrometheusService` | Service for registering and clearing metrics |
-| `AbstractBaseHealthIndicator` | Base class for custom health indicators |
-| `AppHealthIndicator` | HTTP ping health indicator |
-| `DatabaseHealthIndicator` | TypeORM health indicator |
-| `RedisHealthIndicator` | Redis health indicator |
-| `RmqHealthIndicator` | RabbitMQ health indicator |
-| `TypeormQueryHealthIndicator` | Custom TypeORM query health indicator |
-| `CustomHttpHealthIndicator` | Configurable HTTP health indicator |
-| `PROMETHEUS_MODULE_OPTIONS` | Injection token |
+| Symbol                        | Description                                  |
+| ----------------------------- | -------------------------------------------- |
+| `PrometheusModule`            | Main module                                  |
+| `PrometheusService`           | Service for registering and clearing metrics |
+| `AbstractBaseHealthIndicator` | Base class for custom health indicators      |
+| `AppHealthIndicator`          | HTTP ping health indicator                   |
+| `DatabaseHealthIndicator`     | TypeORM health indicator                     |
+| `RedisHealthIndicator`        | Redis health indicator                       |
+| `RmqHealthIndicator`          | RabbitMQ health indicator                    |
+| `TypeormQueryHealthIndicator` | Custom TypeORM query health indicator        |
+| `CustomHttpHealthIndicator`   | Configurable HTTP health indicator           |
+| `PROMETHEUS_MODULE_OPTIONS`   | Injection token                              |
 
 ## Development
 

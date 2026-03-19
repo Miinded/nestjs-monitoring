@@ -33,7 +33,12 @@ export abstract class AbstractBaseHealthIndicator extends HealthIndicator {
     if (this.promClientService) {
       Logger.debug('Register metrics histogram for: ' + this.name, TAG, true);
       this.metricsRegistered = true;
-      const histogram: PrometheusHistogram = this.promClientService.registerMetrics(this.name, this.help(), this.labelNames, this.buckets);
+      const histogram: PrometheusHistogram = this.promClientService.registerMetrics(
+        this.name,
+        this.help(),
+        this.labelNames,
+        this.buckets,
+      );
       this.callMetrics = histogram.startTimer();
     }
   }

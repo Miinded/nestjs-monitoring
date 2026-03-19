@@ -37,7 +37,14 @@ describe('TypeormQueryHealthIndicator', () => {
       }),
     } as any;
 
-    indicator = new TypeormQueryHealthIndicator(mockPrometheusService, mockOptions, 'users', query, parameters, callback);
+    indicator = new TypeormQueryHealthIndicator(
+      mockPrometheusService,
+      mockOptions,
+      'users',
+      query,
+      parameters,
+      callback,
+    );
   });
 
   it('should be defined', () => {

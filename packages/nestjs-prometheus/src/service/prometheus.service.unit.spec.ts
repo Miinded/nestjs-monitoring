@@ -33,7 +33,12 @@ describe('PrometheusService', () => {
 
   describe('registerMetrics', () => {
     it('should register a new histogram metric', () => {
-      const histogram = service.registerMetrics(`test_metric_${testCounter}`, 'Test metric description', ['method'], [0.1, 0.5, 1]);
+      const histogram = service.registerMetrics(
+        `test_metric_${testCounter}`,
+        'Test metric description',
+        ['method'],
+        [0.1, 0.5, 1],
+      );
       expect(histogram).toBeDefined();
     });
 

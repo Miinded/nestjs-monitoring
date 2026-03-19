@@ -40,9 +40,13 @@ describe('AppHealthIndicator', () => {
     });
 
     it('should return healthy status with custom url', async () => {
-      const indicatorWithOption = new AppHealthIndicator(mockPrometheusService, mockHttpIndicator, { url: 'http://custom:3000' });
+      const indicatorWithOption = new AppHealthIndicator(mockPrometheusService, mockHttpIndicator, {
+        url: 'http://custom:3000',
+      });
       await indicatorWithOption.isHealthy();
-      expect(mockHttpIndicator.pingCheck).toHaveBeenCalledWith('app', 'http://custom:3000', { url: 'http://custom:3000' });
+      expect(mockHttpIndicator.pingCheck).toHaveBeenCalledWith('app', 'http://custom:3000', {
+        url: 'http://custom:3000',
+      });
     });
   });
 });

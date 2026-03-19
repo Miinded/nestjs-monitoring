@@ -10,7 +10,9 @@ export class HealthService {
   ) {}
 
   public async check(): Promise<HealthCheckResult | undefined> {
-    return await this.health.check(this.listOfThingsToMonitor.map((apiIndicator: IHealthIndicator) => async () => apiIndicator.isHealthy()));
+    return await this.health.check(
+      this.listOfThingsToMonitor.map((apiIndicator: IHealthIndicator) => async () => apiIndicator.isHealthy()),
+    );
   }
 
   @HealthCheck({ noCache: true, swaggerDocumentation: false })

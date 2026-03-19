@@ -40,7 +40,9 @@ describe('DatabaseHealthIndicator', () => {
     });
 
     it('should return healthy status with options', async () => {
-      const indicatorWithOptions = new DatabaseHealthIndicator(mockPrometheusService, mockDbIndicator, { timeout: 1000 });
+      const indicatorWithOptions = new DatabaseHealthIndicator(mockPrometheusService, mockDbIndicator, {
+        timeout: 1000,
+      });
       await indicatorWithOptions.isHealthy();
       expect(mockDbIndicator.pingCheck).toHaveBeenCalledWith('database', { timeout: 1000 });
     });

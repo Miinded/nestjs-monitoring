@@ -10,7 +10,7 @@ class MockHealthIndicator implements IHealthIndicator {
   callMetrics = {};
   customMetricsRegistered = false;
   customGaugesRegistered = false;
-  updatePrometheusData(_isConnected: boolean): void { }
+  updatePrometheusData(_isConnected: boolean): void {}
   async isHealthy(): Promise<HealthIndicatorResult> {
     return { [this.name]: { status: 'up' as const } };
   }
@@ -44,9 +44,7 @@ describe('PrometheusModule', () => {
       };
 
       const module = PrometheusModule.registerAsync(config);
-      const prometheusProvider = module.providers?.find(
-        (p) => 'provide' in p && p.provide === PrometheusService,
-      );
+      const prometheusProvider = module.providers?.find((p) => 'provide' in p && p.provide === PrometheusService);
 
       expect(prometheusProvider).toBeDefined();
     });
@@ -58,9 +56,7 @@ describe('PrometheusModule', () => {
       };
 
       const module = PrometheusModule.registerAsync(config);
-      const healthProvider = module.providers?.find(
-        (p) => 'provide' in p && p.provide === HealthService,
-      );
+      const healthProvider = module.providers?.find((p) => 'provide' in p && p.provide === HealthService);
 
       expect(healthProvider).toBeDefined();
     });

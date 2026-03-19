@@ -14,7 +14,14 @@ export class TypeormQueryHealthIndicator extends AbstractBaseHealthIndicator imp
   private parameters: any[];
   private callback: TypeormQueryCallback;
 
-  constructor(promClientService: PrometheusService, options: DataSourceOptions, name: string, query: string, parameters: any[], callback: TypeormQueryCallback) {
+  constructor(
+    promClientService: PrometheusService,
+    options: DataSourceOptions,
+    name: string,
+    query: string,
+    parameters: any[],
+    callback: TypeormQueryCallback,
+  ) {
     super(`query_${name}`, promClientService);
     this.options = options;
     this.query = query;

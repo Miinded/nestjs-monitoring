@@ -8,7 +8,7 @@ class MockHealthIndicator implements IHealthIndicator {
   callMetrics = {};
   customMetricsRegistered = false;
   customGaugesRegistered = false;
-  updatePrometheusData(_isConnected: boolean): void { }
+  updatePrometheusData(_isConnected: boolean): void {}
   async isHealthy(): Promise<HealthIndicatorResult> {
     return {
       [this.name]: { status: 'up' as const },
@@ -26,7 +26,7 @@ class FailingHealthIndicator implements IHealthIndicator {
   callMetrics = {};
   customMetricsRegistered = false;
   customGaugesRegistered = false;
-  updatePrometheusData(_isConnected: boolean): void { }
+  updatePrometheusData(_isConnected: boolean): void {}
   async isHealthy(): Promise<HealthIndicatorResult> {
     throw new Error('Health check failed');
   }

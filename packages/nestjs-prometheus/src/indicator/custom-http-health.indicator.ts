@@ -2,7 +2,10 @@ import { HealthIndicatorResult, HttpHealthIndicator } from '@nestjs/terminus';
 import { PrometheusService } from '../service/prometheus.service';
 import { IHealthIndicator } from '../interface/ihealth-indicator.interface';
 import { AbstractBaseHealthIndicator } from './abstract-base-health.indicator';
-import { type AxiosRequestConfig, type AxiosResponse } from '@nestjs/terminus/dist/health-indicator/http/axios.interfaces';
+import {
+  type AxiosRequestConfig,
+  type AxiosResponse,
+} from '@nestjs/terminus/dist/health-indicator/http/axios.interfaces';
 import { Observable } from 'rxjs';
 
 interface HttpClientLike {

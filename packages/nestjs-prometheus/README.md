@@ -65,6 +65,7 @@ export class AppModule {}
 ```
 
 This automatically registers:
+
 - `GET /health` — Health check endpoint
 - `GET /metrics` — Prometheus metrics endpoint
 
@@ -119,50 +120,50 @@ export class OrderService {
 
 ## Built-in Health Indicators
 
-| Indicator | Description |
-| --------- | ----------- |
-| `AppHealthIndicator` | HTTP ping check on the application itself |
-| `CustomHttpHealthIndicator` | HTTP ping check on any configurable URL |
-| `DatabaseHealthIndicator` | TypeORM database connectivity check |
-| `RedisHealthIndicator` | Redis connectivity check via microservice transport |
-| `RmqHealthIndicator` | RabbitMQ connectivity check via microservice transport |
-| `TypeormQueryHealthIndicator` | Custom TypeORM query health check |
+| Indicator                     | Description                                            |
+| ----------------------------- | ------------------------------------------------------ |
+| `AppHealthIndicator`          | HTTP ping check on the application itself              |
+| `CustomHttpHealthIndicator`   | HTTP ping check on any configurable URL                |
+| `DatabaseHealthIndicator`     | TypeORM database connectivity check                    |
+| `RedisHealthIndicator`        | Redis connectivity check via microservice transport    |
+| `RmqHealthIndicator`          | RabbitMQ connectivity check via microservice transport |
+| `TypeormQueryHealthIndicator` | Custom TypeORM query health check                      |
 
 ## API Reference
 
 ### `PrometheusModule.registerAsync(options)`
 
-| Option | Type | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| `name` | `string` | ✅ | Application name used as Prometheus metric prefix |
-| `useFactory` | `(...args) => IHealthIndicator[]` | ✅ | Factory returning health indicator instances |
-| `inject` | `any[]` | ❌ | Dependencies to inject into factory |
-| `imports` | `Module[]` | ❌ | Modules to import |
+| Option       | Type                              | Required | Description                                       |
+| ------------ | --------------------------------- | -------- | ------------------------------------------------- |
+| `name`       | `string`                          | ✅       | Application name used as Prometheus metric prefix |
+| `useFactory` | `(...args) => IHealthIndicator[]` | ✅       | Factory returning health indicator instances      |
+| `inject`     | `any[]`                           | ❌       | Dependencies to inject into factory               |
+| `imports`    | `Module[]`                        | ❌       | Modules to import                                 |
 
 ### `PrometheusService`
 
-| Method | Signature | Description |
-| ------ | --------- | ----------- |
-| `registerMetrics` | `(name, help, labelNames, buckets) => Histogram` | Register a histogram metric |
-| `registerGauge` | `(name, help) => Gauge` | Register a gauge metric |
-| `removeSingleMetric` | `(name) => void` | Remove a single metric by name |
-| `clearMetrics` | `() => void` | Clear all registered metrics |
-| `metrics` | `() => Promise<string>` | Get Prometheus text format output |
+| Method               | Signature                                        | Description                       |
+| -------------------- | ------------------------------------------------ | --------------------------------- |
+| `registerMetrics`    | `(name, help, labelNames, buckets) => Histogram` | Register a histogram metric       |
+| `registerGauge`      | `(name, help) => Gauge`                          | Register a gauge metric           |
+| `removeSingleMetric` | `(name) => void`                                 | Remove a single metric by name    |
+| `clearMetrics`       | `() => void`                                     | Clear all registered metrics      |
+| `metrics`            | `() => Promise<string>`                          | Get Prometheus text format output |
 
 ### Exports
 
-| Symbol | Description |
-| ------ | ----------- |
-| `PrometheusModule` | Main module |
-| `PrometheusService` | Service for registering and managing metrics |
-| `AbstractBaseHealthIndicator` | Base class for custom health indicators |
-| `AppHealthIndicator` | HTTP self-ping health indicator |
-| `CustomHttpHealthIndicator` | Configurable HTTP health indicator |
-| `DatabaseHealthIndicator` | TypeORM health indicator |
-| `RedisHealthIndicator` | Redis health indicator |
-| `RmqHealthIndicator` | RabbitMQ health indicator |
-| `TypeormQueryHealthIndicator` | TypeORM query health indicator |
-| `PROMETHEUS_MODULE_OPTIONS` | Injection token for module options |
+| Symbol                        | Description                                  |
+| ----------------------------- | -------------------------------------------- |
+| `PrometheusModule`            | Main module                                  |
+| `PrometheusService`           | Service for registering and managing metrics |
+| `AbstractBaseHealthIndicator` | Base class for custom health indicators      |
+| `AppHealthIndicator`          | HTTP self-ping health indicator              |
+| `CustomHttpHealthIndicator`   | Configurable HTTP health indicator           |
+| `DatabaseHealthIndicator`     | TypeORM health indicator                     |
+| `RedisHealthIndicator`        | Redis health indicator                       |
+| `RmqHealthIndicator`          | RabbitMQ health indicator                    |
+| `TypeormQueryHealthIndicator` | TypeORM query health indicator               |
+| `PROMETHEUS_MODULE_OPTIONS`   | Injection token for module options           |
 
 ## License
 
