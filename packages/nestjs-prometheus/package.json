@@ -6,13 +6,13 @@
   "author": "Miinded",
   "repository": {
     "type": "git",
-    "url": "https://github.com/miinded/nestjs-monitoring.git",
+    "url": "https://github.com/Miinded/nestjs-monitoring.git",
     "directory": "packages/nestjs-prometheus"
   },
   "bugs": {
-    "url": "https://github.com/miinded/nestjs-monitoring/issues"
+    "url": "https://github.com/Miinded/nestjs-monitoring/issues"
   },
-  "homepage": "https://github.com/miinded/nestjs-monitoring/tree/main/packages/nestjs-prometheus",
+  "homepage": "https://github.com/Miinded/nestjs-monitoring/tree/main/packages/nestjs-prometheus",
   "keywords": [
     "nestjs",
     "nest",
