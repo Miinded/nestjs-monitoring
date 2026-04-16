@@ -13,7 +13,7 @@ catalog:
   '@nestjs/microservices': ^11.0.0
   '@nestjs/swagger': ^11.0.0
   '@nestjs/terminus': ^11.0.0
-  '@swc/core': ^1.13.5
+  '@swc/core': ^1.15.26
   '@swc/jest': ^0.2.39
   '@typescript-eslint/eslint-plugin': ^8.55.0
   '@typescript-eslint/parser': ^8.55.0
