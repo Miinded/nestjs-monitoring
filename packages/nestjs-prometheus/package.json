@@ -1,6 +1,6 @@
 {
   "name": "@miinded/nestjs-prometheus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready NestJS module for Prometheus metrics and health checks with Terminus integration.",
   "license": "MIT",
   "author": "Miinded",
